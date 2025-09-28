@@ -22,6 +22,7 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.152",
     "esbuild": "^0.25.10",
+    "serverless-dotenv-plugin": "^6.0.0",
     "serverless-esbuild": "^1.55.1"
   },
   "dependencies": {
