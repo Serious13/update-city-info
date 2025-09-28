@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "serverless": "^3.40.0",
-    "serverless-http": "^3.0.1"
+    "serverless-http": "^3.0.1",
+    "serverless-offline": "^4.0.0"
   }
 }
