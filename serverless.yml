@@ -1,0 +1,38 @@
+service: update-city-info
+
+plugins:
+  - serverless-localstack
+  - serverless-plugin-typescript
+
+provider:
+  name: aws
+  stage: local
+  region: eu-central-1
+  runtime: nodejs20.x
+  stackName: update-info
+
+custom:
+  localstack:
+    stages:
+      - local
+    host: http://localhost
+    edgePort: 4566
+    autostart: true
+    lambda:
+      mountCode: True
+    docker:
+      sudo: False
+
+functions:
+  update-city-info:
+    handler: ./handler.ts
+    name: update-info
+    description: A microservice to updade city info
+    timeout: 300
+    events:
+      - http:
+          path: "{proxy+}"
+          method: any
+          cors: true
+
+
