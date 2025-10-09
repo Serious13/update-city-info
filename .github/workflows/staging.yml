@@ -21,7 +21,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - name: Install Plugin and Deploy
-      uses: serverless/github-action@v3.2
+      uses: serverless@13.2.0/github-action@v3.2
       with:
         args: -c "serverless plugin install --name serverless-dotenv-plugin && serverless plugin install --name serverless-offline && serverless deploy --stage prod"
         entrypoint: /bin/sh
