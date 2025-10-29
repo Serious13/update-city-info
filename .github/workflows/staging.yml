@@ -1,15 +1,14 @@
-name: Deploy product-serverless
+name: Deploy master branch
+
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
-  productionDeploy:
-    name: production-deploy
+  deploy:
+    name: deploy
     runs-on: ubuntu-latest
-    environment:
-      name: prod
     strategy:
       matrix:
         node-version: [18.x]
@@ -23,7 +22,13 @@ jobs:
     - name: serverless deploy
       uses: serverless/github-action@v3.2
       with:
-        args: -c "serverless plugin install -n serverless-localstack && serverless deploy --stage prod"
+        args: deploy
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+        # or if using AWS credentials directly
+        # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        
+        
+        #secrets.SERVERLESS_ACCESS_KEY
+        #secrets.AWS_ACCESS_KEY_ID
