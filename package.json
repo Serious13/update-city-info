@@ -28,6 +28,7 @@
     "typescript": "^4.4.3"
   },
   "dependencies": {
-    "serverless-http": "^3.0.1"
+    "serverless-http": "^3.0.1",
+    "serverless-localstack": "^1.3.1"
   }
 }
