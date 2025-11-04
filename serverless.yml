@@ -20,8 +20,6 @@ custom:
     autostart: true
     lambda:
       mountCode: True
-    docker:
-      sudo: False
 
 functions:
   update-city-info:
