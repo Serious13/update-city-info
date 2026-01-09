@@ -16,7 +16,7 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "del /q dist",
-    "clean": "rimraf dist",
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
     "build": "npm run clean && tsc",
     "postbuild": "cd dist && 7z a -tzip index.zip index.js*"
   },
