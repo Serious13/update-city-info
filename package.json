@@ -16,12 +16,14 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "del /q dist",
-    "build": "esbuild handler.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc",
     "postbuild": "cd dist && 7z a -tzip index.zip index.js*"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.152",
     "esbuild": "^0.25.10",
+    "rimraf": "^6.1.2",
     "serverless": "^3.40.0",
     "serverless-dotenv-plugin": "^6.0.0",
     "ts-node": "^9.1.1",
