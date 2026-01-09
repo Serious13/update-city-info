@@ -15,10 +15,10 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "prebuild": "del /q dist",
-    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
-    "build": "npm run clean && tsc",
-    "postbuild": "cd dist && 7z a -tzip index.zip index.js*"
+    "clean": "rimraf dist",
+    "build": "tsc",
+    "prebuild": "npm run clean",
+    "deploy": "serverless deploy"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.152",
