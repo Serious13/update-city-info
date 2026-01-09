@@ -8,7 +8,7 @@ provider:
   name: aws
   stage: local
   region: eu-central-1
-  runtime: nodejs20.x
+  runtime: nodejs18.x
   stackName: update-info
 
 custom:
