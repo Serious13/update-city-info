@@ -1,4 +1,4 @@
-name: Deploy Serverless TypeScript
+name: Deploy Serverless TypeScript1
 
 on:
   push:
