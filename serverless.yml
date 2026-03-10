@@ -9,10 +9,7 @@ provider:
   stage: local
   region: eu-central-1
   runtime: nodejs18.x
-  stackName: update-info      
-  credentials:
-    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  stackName: update-info
 
 custom:
   localstack:
