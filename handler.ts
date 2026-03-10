@@ -40,3 +40,7 @@ module.exports.funcName = async (context, req) => {
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1
  */
+
+          /**permissions:
+  id-token: write
+  contents: read */
